@@ -106,7 +106,7 @@ public class RegisterComposite extends CustomComponent {
 		login.setWidth("-1px");
 		login.setHeight("-1px");
 		login.addClickListener(new LoginListener(mv));
-		mainLayout.addComponent(register, "top:152.0px;left:70.0px;");
+		mainLayout.addComponent(login, "top:192.0px;left:70.0px;");
 		
 		// error
 		error = new Label();

@@ -2,6 +2,7 @@ package dms.view;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -26,6 +27,7 @@ import dms.view.composites.RegisterComposite;
  *
  */
 @Theme("escheduler")
+@PreserveOnRefresh
 public class MainView extends UI{
 	
 	private boolean loggedIn = false;
@@ -40,14 +42,7 @@ public class MainView extends UI{
 	 */
 	@Override
 	protected void init(VaadinRequest request) {
-		final VerticalLayout layout = new VerticalLayout();
-		layout.setMargin(true);
-		setContent(layout);
-		layout.setSizeFull();		
-		
-		LoginComposite composite = new LoginComposite(this);
-		layout.addComponent(composite);
-
+		openLogin();
 	}
 	
 	/**
@@ -100,4 +95,14 @@ public class MainView extends UI{
 	public void logOut() {
 		setContent(new LoginComposite(this));
 	}
+	
+	@Override
+    protected void refresh(VaadinRequest request) {
+        if(loggedIn) {
+        	openMain();
+        }
+        else {
+        	openLogin();
+        }
+    }
 }

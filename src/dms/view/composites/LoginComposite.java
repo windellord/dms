@@ -99,7 +99,7 @@ public class LoginComposite extends CustomComponent {
 		register.setWidth("-1px");
 		register.setHeight("-1px");
 		register.addClickListener(new RegisterListener(mv));
-		mainLayout.addComponent(register, "top:120.0px;left:140.0px;");
+		mainLayout.addComponent(register, "top:160.0px;left:40.0px;");
 		
 		return mainLayout;
 	}
