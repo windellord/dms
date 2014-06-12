@@ -8,7 +8,7 @@
 
         <!-- Database connection settings -->
 		<property name="hibernate.connection.driver_class">org.h2.Driver</property>
-		<property name="hibernate.connection.url">jdbc:h2:./escheduler</property>
+		<property name="hibernate.connection.url">jdbc:h2:./dms</property>
 		<property name="hibernate.connection.username">sa</property>
 		<property name="hibernate.connection.password"></property>
 		<property name="hibernate.default_schema">PUBLIC</property>
@@ -28,14 +28,11 @@
         <property name="javax.persistence.validation.mode">auto</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="escheduler.model.Comment"/>
-        <mapping class="escheduler.model.EType"/>
-        <mapping class="escheduler.model.Event"/>
-        <mapping class="escheduler.model.Eventdate"/>
-        <mapping class="escheduler.model.Notification"/>
-        <mapping class="escheduler.model.NType"/>
-        <mapping class="escheduler.model.Participant"/>
+        <mapping class="escheduler.model.Dokument"/>
+        <mapping class="escheduler.model.DokumentType"/>
+        <mapping class="escheduler.model.DokumentVersion"/>
+        <mapping class="escheduler.model.User_Dokument"/>
         <mapping class="escheduler.model.User"/>
-        
+       
     </session-factory>
 </hibernate-configuration>
